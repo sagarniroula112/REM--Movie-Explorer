@@ -19,7 +19,7 @@ function Dashboard() {
     const fetchGenres = async () => {
       try {
         const response = await fetch(
-          `https://api.themoviedb.org/3/genre/movie/list?api_key=e919ae2d2eaddaf94f19c2fc1d61852e&language=en-US`
+          `https://api.themoviedb.org/3/genre/movie/list?api_key=<TMDB_API_KEY_HERE>&language=en-US`
         );
         const data = await response.json();
         setGenres(data.genres); // Set genres to state
@@ -40,7 +40,7 @@ function Dashboard() {
       }
 
       const response = await fetch(
-        `https://api.themoviedb.org/3/discover/movie?api_key=e919ae2d2eaddaf94f19c2fc1d61852e&language=en-US&with_genres=${genreId}`,
+        `https://api.themoviedb.org/3/discover/movie?api_key=<TMDB_API_KEY_HERE>&language=en-US&with_genres=${genreId}`,
         {
           method: "GET",
           headers: {
